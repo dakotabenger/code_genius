@@ -1,0 +1,38 @@
+// How to get the textarea value to be an array of lines
+//might need some toying with
+    //redux instead of useState
+  const [text, setText] = useState("");
+
+<textarea
+        value={text}
+        onChange={(e) => {
+          const { value } = e.target;
+          setText(e.target.value);
+          console.log(e.target.value.split(/\r?\n/));
+        }}
+      ></textarea>
+
+      // code-editor with ability to syntax highlight (still needs a highlight library)
+      https://www.npmjs.com/package/react-simple-code-editor
+
+
+        // Pages:
+        // create snippet page (textarea for snippet, text input for title)
+        // view snippet page (add comments/annotations,vote on annotations)
+        // home page (view all snippets)
+
+
+
+      // Components:
+        // Create Snippet Page   
+            // Form Component
+                // textarea input (snippet)
+                // text input (title)
+        // View Snippet Page
+            // Snippet Component
+                // Line Component
+            // Annotation Component
+                // Vote +1/-1 Component
+            // Comment Component
+        // Home Page
+            // Popular Snippets (order by vote)
