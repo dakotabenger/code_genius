@@ -5,21 +5,36 @@ import { useParams } from "react-router-dom";
 import Prism from "prismjs";
 import './prism.css'
 import SnippetCode from './SnippetCode';
-
+import { useDispatch, useSelector } from "react-redux";
+import AnnotationComponent from './AnnotationComponent'
 
 
 export default function SnippetPage() {
+    const dispatch = useDispatch();
+    const annotationBoolean = useSelector((state) => state.annotation.openAnnotation);
     const { id } = useParams();
     const fetchCall = async (id) => {return await fetch(`/api/snippets/${id}`) }
     let [snippet,setSnippet] = useState(false);
+
+   const annotation = (
+        <div>
+            <h3>Annotations</h3>
+            <AnnotationComponent />
+        </div>
+    )
+
     useEffect(() => {
         setSnippet(fetchCall(id))
       }, [fetchCall,id,snippet]);
-    if (snippet) {
+
+      if (snippet) {
         return (
         <div>
-            <h3>{snippet.titles}</h3>
-            <SnippetCode lines={snippet.lines} />
+            <div>
+                <h3>{snippet.titles}</h3>
+                <SnippetCode lines={snippet.lines} />
+            </div>
+            {annotationBoolean && annotation}
         </div>
     )
     } else {
