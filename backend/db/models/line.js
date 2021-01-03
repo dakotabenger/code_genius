@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Line.associate = function(models) {
     Line.belongsTo(models.Snippet, {foreignKey: "snippet_id"})
-    Line.hasMany(models.Annotation,{foreignKey:"line_id"})
+    Line.hasMany(models.Annotation,{foreignKey:"line_id",onDelete:'cascade',hooks:true})
   };
   return Line;
 };

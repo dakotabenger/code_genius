@@ -6,8 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Snippet.associate = function(models) {
     Snippet.belongsTo(models.User, {foreignKey: "user_id"})
-    Snippet.hasMany(models.Line,{foreignKey:"snippet_id"})
-    Snippet.hasMany(models.Annotation,{foreignKey:"snippet_id"})
+    Snippet.hasMany(models.Line,{foreignKey:"snippet_id",onDelete:`cascade`,hooks:true})
   };
   return Snippet;
 };

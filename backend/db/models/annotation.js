@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
   Annotation.associate = function(models) {
     Annotation.belongsTo(models.Line, {foreignKey: "line_id"})
     Annotation.belongsTo(models.User, {foreignKey: "user_id"})
-    Annotation.belongsTo(models.Snippet,{foreignKey:"snippet_id"})
   };
   return Annotation;
 };
