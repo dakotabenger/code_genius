@@ -1,0 +1,30 @@
+pre{
+    counter-reset: line;
+    width: 800px;
+    display: block;
+    align-items: center;    
+}
+code{
+    /* margin: -5px; */
+    counter-increment: line;
+    right: 60px;
+    /* padding: 5px; */
+    border-left: transparent 10px ;
+}
+
+.line-code:before{
+    right: 15px;
+    /* margin: -7px; */
+    padding: 15px;
+    content: counter(line);
+    -webkit-user-select: none;
+    border-right: white solid 1px;
+}
+
+.snippet-component {
+    display: flex;
+}
+
+.snippet-title {
+    justify-content: center;
+}

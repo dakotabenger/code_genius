@@ -1,19 +1,19 @@
-import React, { Suspense, useState } from 'react';
+import React, { useState } from 'react';
 // import Prism from "prismjs";
 import "./prism.css"
-import { useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import { fetch } from '../../store/csrf';
 import { useHistory } from 'react-router-dom';
-
+import * as snippetActions from '../../store/snippet'
 
 export default function SnippetForm() {
+    const dispatch = useDispatch()
     const [title,setTitle] = useState("")
     const [code,setCode] = useState("")
-    const user = useSelector((state) => state.session.user);
     const history = useHistory()
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -27,9 +27,11 @@ export default function SnippetForm() {
             body: JSON.stringify(reqBody),
         });
         // const json = await res.json()
-    //    history.push(`/snipppet/${res.data.newSnippet.id}`)
-        const snippet = await fetch(`/api/snippets/${res.data.newSnippet.id}`)
-        console.log(snippet)
+        console.log(res)
+        dispatch(snippetActions.giveSnippet(res.data.snippet))
+        
+       history.push(`/snippet/`)
+        
     }   
     return (
         <form onSubmit={onSubmit}>
@@ -39,10 +41,11 @@ export default function SnippetForm() {
             </div>
             <div>
                 <label>Code Snippet:</label>
-                <Editor value={code} onValueChange={code => setCode(code)} highlight={code => highlight(code,languages.js)} padding={12} style={{
+                <Editor value={code}  onValueChange={code => setCode(code)} highlight={code => highlight(code,languages.js)} padding={12} style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 18,
-                backgroundColor:"grey",
+                backgroundColor:"black",
+                color:"white"
                 }}
                 />
             </div>

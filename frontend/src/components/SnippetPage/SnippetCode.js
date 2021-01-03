@@ -1,35 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
-import "./prism.css"
-import { useSelector } from 'react-redux';
-import Editor from 'react-simple-code-editor';
-import { highlight, languages } from 'prismjs/components/prism-core';
-import 'prismjs/components/prism-clike';
-import 'prismjs/components/prism-javascript';
-import { fetch } from '../../store/csrf';
-import { useHistory } from 'react-router-dom';
+import "./prism.css";
+import "./SnippetCode.css"
+import { useDispatch, useSelector } from "react-redux";
+import { highlight, languages } from "prismjs/components/prism-core";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
+import { Modal } from "../../context/Modal";
+import AnnotationComponent from "./AnnotationComponent";
+import * as lineActions from '../../store/line'
+import LineComponent from "./LineComponent"
+import { fetch } from "../../store/csrf";
+import { useHistory } from "react-router-dom";
 
-export default function SnippetCode({lines}) {
+export default function SnippetCode({ lines }) {
+    const history = useHistory()
 
-    if (lines) {
-        return (
-            <div>
-                <pre>
-                <code className="language-javascript">
-                    {lines.map((line) => {
-                        return (
-                            <span id={line.id} onClick={(e) => {}}>{line.lineText}</span>
-                        )
-                    })}
-                </code>
-            </pre>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <p>We couldn't find that Snippet</p>
-            </div>
-        )
+    const deleteSnippet = async (id) => {
+        await fetch(`/api/snippets/${id}`,{method:"DELETE"})
+        history.push(`/`)
     }
+  if (lines) {
+    return (
+    <>
+    <pre className="line-numbers">
+{
+    lines.map((line,i) => {
+        return (
+            <LineComponent line={line} />
+);
+    })}
+  </pre>
+  <button onClick={(e) => {
+      e.preventDefault()
+      deleteSnippet(lines[0].snippet_id)
+  }}>Delete Snippet</button>
+  </>
+  
+    )
+} else {
+    return (
+      <div>
+        <p>We couldn't find that Snippet</p>
+      </div>
+    );
+  }
 }

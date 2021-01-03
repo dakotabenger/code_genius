@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SnippetFormPage from './components/SnippetFormPage'
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SnippetPage from "./components/SnippetPage/SnippetPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/snippet-form">
             <SnippetFormPage />
+          </Route>
+          <Route path="/snippet">
+            <SnippetPage className="snippet-component"/>
           </Route>
         </Switch>
       )}

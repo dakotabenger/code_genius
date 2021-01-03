@@ -1,38 +1,41 @@
-// How to get the textarea value to be an array of lines
-//might need some toying with
-    //redux instead of useState
-  const [text, setText] = useState("");
-
-<textarea
-        value={text}
-        onChange={(e) => {
-          const { value } = e.target;
-          setText(e.target.value);
-          console.log(e.target.value.split(/\r?\n/));
-        }}
-      ></textarea>
-
-      // code-editor with ability to syntax highlight (still needs a highlight library)
-      https://www.npmjs.com/package/react-simple-code-editor
-
-
-        // Pages:
-        // create snippet page (textarea for snippet, text input for title)
-        // view snippet page (add comments/annotations,vote on annotations)
-        // home page (view all snippets)
+TITLE: Express Route and Deleting a resource
+LINE: router.delete("/annotations/:id",requireAuth,asyncHandler(async (req,res) => { 
+   Annotation: Specify your method("delete") and route("/annotations/:id") 
+   Annotation:  requireAuth is a middleware to make sure a user is authenticated
+    const annotationId = req.params.id
+  Annotation: you can get params by access its property on the request
+LINE:    const deletedAnnotation = await Annotation.findByPk(annotationId)
+  Annotation: find the resource by primary key
+LINE:    if (deleteAnnotation.user_id === req.user.id) {
+  Annotation: Check if the resource was created by session user
+LINE:    await deletedAnnotation.destroy()
+  Annotation: delete the resource
+LINE:    return res.json({deletedAnnotation})
+  Annotation: Send it back as JSON
+LINE:    } else {
+LINE:        return res.json({error:"Something went wrong"})
+  Annotation: Send back an error
+LINE:    }
+LINE: }))
 
 
+ANNOTATION:
+  {
+    user_id: 1,
+    line_id: Count what line it is total (regardless of snippet. so on snippet 2 line 1 it would be 11),
+    annotation: Put annotation here in qoutes like this "Specify your method("delete") and route("/annotations/:id")",
+    vote_total: 0
+  }
 
-      // Components:
-        // Create Snippet Page   
-            // Form Component
-                // textarea input (snippet)
-                // text input (title)
-        // View Snippet Page
-            // Snippet Component
-                // Line Component
-            // Annotation Component
-                // Vote +1/-1 Component
-            // Comment Component
-        // Home Page
-            // Popular Snippets (order by vote)
+SNIPPET
+{
+  title:title here in qoutes,
+  user_id:1
+}
+
+line
+{
+    snippet_id:number of the snippet, so for the first 1 it will be 1,
+    line_text: line here in qoutes,
+    number: count what line it is IN THE SNIPPET. so the first line of snippet 2 will be 1
+}
