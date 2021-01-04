@@ -18,7 +18,7 @@ export default function SnippetCode({ lines }) {
 
     const deleteSnippet = async (id) => {
         await fetch(`/api/snippets/${id}`,{method:"DELETE"})
-        history.push(`/`)
+        history.push(`/home`)
     }
   if (lines) {
     return (

@@ -11,7 +11,6 @@ const router = express.Router();
 router.get("/snippets",asyncHandler(async (req,res) => {
     const snippets = await Snippet.findAll({order:[[Line,'number','ASC']],include:[
         {model:Line,
-        limit: 10,
         include: [ {
             model: Annotation,include: {model:User}
             },
