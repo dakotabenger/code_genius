@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import SnippetPage from "./components/SnippetPage/SnippetPage";
 import HomePageComponent from "./components/HomePageComponent/HomePageComponent";
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +36,9 @@ function App() {
             <SnippetPage className="snippet-component"/>
           </Route>
           <Route path="/home">
+            
             <HomePageComponent></HomePageComponent>
+            
           </Route>
           <Route path="/">
             <div style={{display:"block"}}>

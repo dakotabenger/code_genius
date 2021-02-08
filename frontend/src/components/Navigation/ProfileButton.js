@@ -5,7 +5,7 @@ import * as sessionActions from '../../store/session';
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -27,22 +27,43 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(sessionActions.logout());
   };
+ const ulStyle = {
+  display:"block",
+  padding:"0px",
+  backgroundColor:"#52057b",
+  position:"relative",
+  top:"46px",
+  listStyleType:"none",
+ }
 
+ const spanStyle = {
+   padding:"0px",
+   display:"inline",
+   position:"relative",
+   top:"2px",
+   right:"5px"
+ }
+ const buttonStyle = {
+
+ }
   return (
-    <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+    <span style={spanStyle}>
+      <button style={buttonStyle} onClick={openMenu}>
+        <i className="fas fa-user-circle" /> Profile Menu
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
+      <>
+        <ul style={ulStyle}className="profile-dropdown">
+      <p>Profile:</p>
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
         </ul>
+        </>
       )}
-    </>
+    </span>
   );
 }
 

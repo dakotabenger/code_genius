@@ -5,8 +5,7 @@ import { useDispatch} from 'react-redux';
 import { fetch } from '../../store/csrf';
 import { useHistory } from 'react-router-dom';
 import * as snippetActions from '../../store/snippet'
-import { useTable, usePagination } from 'react-table' 
-
+import Table from 'react-bootstrap/Table'
 export default function HomePageComponent() {
     const [snippets,setSnippets] = useState([])
     const dispatch = useDispatch();
@@ -34,18 +33,49 @@ export default function HomePageComponent() {
 }
     console.log(snippets)
     
+    const tableStyle = {
+        height: "180px",
+        width: "100%",
+        position:"relative",
+        top:"10px"
+    }
     
+   
 
-     
+    const hThreeStyle = {
+        textAlign:"center",
+        position:"relative",
+        top:"5px"
+    }
+
+    const thStyle = {
+        width: "33%",
+        textAlign:"center"
+    }
+
+    const tdStyle = {
+        textAlign:"center",
+        cursor:"pointer"
+    }
+const backgroundDivStyle = {
+    backgroundColor: "#000000"
+}
 
     return (
               <>
-                <table >
+              <br>
+              </br>
+        
+              <h5 style={hThreeStyle}>Code Snippets.</h5>
+              <h6 style={hThreeStyle}>Click on any Snippet to see the code.</h6>
+            <div> </div>
+              <div style={backgroundDivStyle}>
+                <Table striped bordered hover variant="dark" style={{position:"relative",top:"100px",height:"600px"}}>
                     <thead>
-                        <tr >
-                            <th>Title</th>
-                            <th>User</th>
-                            <th>Annotations</th>
+                        <tr>
+                            <th style={thStyle}>Title</th>
+                            <th style={thStyle}>User</th>
+                            <th style={thStyle}>Annotations</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,9 +88,9 @@ export default function HomePageComponent() {
                                         setSnippetStore(snippet)
                                         history.push("/snippet")
                                     }}>
-                                        <td>{snippet.title}</td>
-                                        <td>{snippet.User.username}</td>
-                                        <td>{snippet.Lines.reduce((numOfAnnotations,line)=> {
+                                        <td style={tdStyle}>{snippet.title}</td>
+                                        <td style={tdStyle}>{snippet.User.username}</td>
+                                        <td style={tdStyle}>{snippet.Lines.reduce((numOfAnnotations,line)=> {
                                             console.log(line.Annotations.length)
                                             return numOfAnnotations += line.Annotations.length
                                         },0)}</td>
@@ -70,7 +100,9 @@ export default function HomePageComponent() {
                             }))}
                     </tbody>
 
-                </table>        
+                </Table>        
+            </div>
             </>
+            
     )
 }
