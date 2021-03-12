@@ -17,6 +17,7 @@ function Navigation({ isLoaded }){
       <>
         <LoginFormModal />
         <NavLink to="/signup">Sign Up</NavLink>
+        <a href="https://github.com/dakotabenger"></a>
       </>
     );
   }
