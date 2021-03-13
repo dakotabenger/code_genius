@@ -48,6 +48,8 @@ function App() {
             <Link style={{fontSize:"18pt",padding:"15px",justifyContent:"center",alignItems:"center"}}to="/signup">Sign Up</Link>
             <br />
             <Link   style={{fontSize:"18pt",padding:"15px"}} to="/login">Log in</Link>
+            <h3>Welcome To Code Genius, a code annotation site where you can post snippets and have them annotated with explanations. This is a project by Dak Benger!</h3>
+            <a href="https://github.com/dakotabenger">Check Out My GitHub For other projects!</a>
             </h1>
             </div>
           </Route>
