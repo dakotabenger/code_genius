@@ -6,3 +6,9 @@ html {
 #root {
     background-color: #892CDC;
 }
+
+.front-page-logo {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+}

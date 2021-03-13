@@ -41,6 +41,7 @@ function App() {
             
           </Route>
           <Route path="/">
+            <img className="front-page-logo" src="./logo.png"></img>
             <div style={{display:"block"}}>
             <h1 style={{textAlign:"center",justifyContent:"center"}}>Please create an account or sign in.
             <br />
