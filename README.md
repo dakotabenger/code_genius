@@ -33,10 +33,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/dakotabenger/code_genius">
-    <img src="./logo.png" alt="Logo" >
+    <img src="./frontend/public/logo.png" alt="Logo" >
   </a>
 
-  <h3 align="center"><img src="./favicon.ico">Code Genius</h3>
+  <h3 align="center"><img src="./frontend/public/favicon.ico">Code Genius</h3>
 
   <p align="center">
     An application that makes it easy to create a to-do list so you'll never forget to grab the milk.  
@@ -83,9 +83,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![product-screenshot](./codegenius1.png)
-![product-screenshot](./codegenius2.png)
-![product-screenshot](./codegenius3.png)
+![product-screenshot](./frontend/public/codegenius1.PNG)
+![product-screenshot](./frontend/public/codegenius2.PNG)
+![product-screenshot](./frontend/public/codegenius3.PNG)
+![product-screenshot](./frontend/public/codegenius4.PNG)
 
 Code Genius enables users to post and view code snippets, providing annotations that example that code. 
 #
@@ -93,9 +94,9 @@ Code Genius enables users to post and view code snippets, providing annotations 
 
 
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
-React
-Redux
-Sequelize
+<img src="https://img.shields.io/badge/React-v16-brightgreen">
+<img src="https://img.shields.io/badge/Redux-v4.0.5-brightgreen">
+<img src="https://img.shields.io/badge/Sequelize-v6.5.0-brightgreen">
 <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white">
 <img src='https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white'>
 <img src='https://img.shields.io/badge/Express.js-404D59?style=for-the-badge'>
@@ -132,6 +133,24 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
+### Running The Application
+
+1. CD Into The Backend
+   ```sh
+   cd backend
+   ```
+2. Start the service
+  ```sh
+  npm start
+  ```
+3. Start a new terminal and cd into the Frontend
+  ```sh
+  cd frontend
+  ```
+4. Start the Frontend
+  ```sh
+  npm start
+  ```
 
 
 
