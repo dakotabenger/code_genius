@@ -21,10 +21,52 @@ code{
     border-right: white solid 1px;
 }
 
+
+.line-code:nth-of-type(4){
+   padding-left: 8.5px; 
+}
+
+.line-code:nth-of-type(5){
+    padding-left: 8.5px; 
+ }
+ 
+.line-code:nth-of-type(6){
+    padding-left: 8.5px; 
+ }
+ 
+.line-code:nth-of-type(7){
+    padding-left: 8.5px; 
+ }
+ .line-code:nth-of-type(8){
+    padding-left: 8.5px; 
+ }
+
+ .line-code:nth-of-type(1){
+    padding-left: 8.5px; 
+ }
+ .line-code:nth-of-type(2){
+    padding-left: 8.5px; 
+ }
+ .line-code:nth-of-type(3){
+    padding-left: 8.5px; 
+ }
+ .line-code:nth-of-type(9){
+    padding-left: 8.5px; 
+ }
 .snippet-component {
     display: flex;
 }
 
 .snippet-title {
     justify-content: center;
+}
+
+.annotation-component {
+    background-color: darkgray;
+    border-radius: 10px;
+}
+
+.no-annotations {
+    border-radius: 10px;
+    background-color: darkgray;
 }

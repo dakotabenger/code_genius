@@ -43,13 +43,13 @@ function App() {
           <Route path="/">
             <img className="front-page-logo" src="./logo.png"></img>
             <div style={{display:"block"}}>
-            <h1 style={{textAlign:"center",justifyContent:"center"}}>Please create an account or sign in.
+            <h1 style={{textAlign:"center",justifyContent:"center"}}>Please create an account or sign in to create snippets and annotations. Otherwise click the Home link in the Navbar to see snippets
             <br />
-            <Link style={{fontSize:"18pt",padding:"15px",justifyContent:"center",alignItems:"center"}}to="/signup">Sign Up</Link>
+            <Link style={{fontSize:"32pt",padding:"15px",justifyContent:"center",alignItems:"center", color:"#89CDFF"}}to="/signup">Sign Up</Link>
             <br />
-            <Link   style={{fontSize:"18pt",padding:"15px"}} to="/login">Log in</Link>
+            <Link   style={{fontSize:"32pt",padding:"15px", color:"#89CDFF"}} to="/login">Log in</Link>
             <h3>Welcome To Code Genius, a code annotation site where you can post snippets and have them annotated with explanations. This is a project by Dak Benger!</h3>
-            <a href="https://github.com/dakotabenger">Check Out My GitHub For other projects!</a>
+            <a style={{fontSize:"32pt", color:"#89CDFF"}} href="https://github.com/dakotabenger">Check Out My GitHub For other projects!</a>
             </h1>
             </div>
           </Route>

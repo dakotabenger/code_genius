@@ -33,23 +33,34 @@ export default function SnippetForm() {
        history.push(`/snippet/`)
         
     }   
+    const clearClick = (e) => {
+        e.preventDefault()
+        setCode("")
+    }
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <label htmlFor="title">Snippet Title:</label>
-                <input name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
+        <form style={{height:"100%",display:"flex"}} onSubmit={onSubmit}>
+            <div style={{textAlign:"center"}}>
+                <h3 style={{textAlign:"center",marginTop:"33px",paddingRight:"20px"}}htmlFor="title">Enter A Title For Your Snippet:</h3>
+                <input style={{width:"500px",textAlign:"center"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
             </div>
-            <div>
-                <label>Code Snippet:</label>
+            <div style={{height:"100%",paddingLeft:"20px", marginTop:"30px"}}>
+                <h3 style={{textAlign:"center",}}>Enter Code Below:</h3>
                 <Editor value={code}  onValueChange={code => setCode(code)} highlight={code => highlight(code,languages.js)} padding={12} style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 18,
-                backgroundColor:"black",
-                color:"white"
+                backgroundColor: "grey",
+                color:"red",
+                height: "700px",
+                border: "45px solid black",
+                borderRadius: "8%",
+                overflow:"scroll"
                 }}
                 />
             </div>
-            <button> Create Code Snippet </button>
+            <div style={{display:"flex",alignSelf:"flex-end"}}>
+            <button style={{height:"70px",justifyContent:"center",borderRadius:"8%",padding:"10px",marginLeft:"20px",backgroundColor:"#897CFF"}}> Create Snippet </button>
+            <button style={{height:"70px",justifyContent:"center",borderRadius:"8%",padding:"10px",marginLeft:"20px",backgroundColor:"#897CFF"}} onClick={(e) => clearClick(e)}>Clear Snippet </button>
+            </div>
         </form>
     )
 }

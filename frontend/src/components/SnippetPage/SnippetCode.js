@@ -16,25 +16,48 @@ import { useHistory } from "react-router-dom";
 export default function SnippetCode({ lines }) {
     const history = useHistory()
 
-    const deleteSnippet = async (id) => {
-        await fetch(`/api/snippets/${id}`,{method:"DELETE"})
-        history.push(`/home`)
-    }
+   
   if (lines) {
     return (
     <>
-    <pre className="line-numbers">
+    <pre style={{height:"500px"}} className="line-numbers">
 {
     lines.map((line,i) => {
         return (
             <LineComponent line={line} />
 );
     })}
+    <code className="language-javascript line-code" ></code><br></br>
+    <code className="language-javascript line-code" ></code><br ></br>
+    <code className="language-javascript line-code" ></code><br/>
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+    <code className="language-javascript line-code" ></code><br />
+    
+
+    
   </pre>
-  <button onClick={(e) => {
-      e.preventDefault()
-      deleteSnippet(lines[0].snippet_id)
-  }}>Delete Snippet</button>
+ 
   </>
   
     )

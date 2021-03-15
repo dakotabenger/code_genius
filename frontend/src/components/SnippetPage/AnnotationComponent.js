@@ -38,36 +38,42 @@ export default function AnnotationComponent() {
  if (annotations && annotations.length > 0) {
         return (
             <div className="annotation-component">
-                <h1>Annotations</h1>
-                <h3>View existing annotations from our users or submit your own! </h3>
-                <big><pre><div className={"line-number-annotation"}>{line.number + 1}<code>{" " + line.line_text}</code></div></pre></big>
+                <h1 style={{textAlign:"center"}}>Annotations</h1>
+                <h3 style={{textAlign:"center"}}>View existing annotations from our users or submit your own! </h3>
+                <div className={"line-number-annotation"}><p style={{textAlign:"center"}}>{"   " + (line.number + 1)}{" " + line.line_text}</p></div>
                 {annotations.map(annotation => {
                     console.log(annotation)
                     return (
                         <>
-                        <p className="annotation-text">{annotation.annotation}</p>
-                        <button onClick={(e) => {
+                        <p style={{textAlign:"center"}} className="annotation-text"><p style={{fontSize:"12pt"}}>This User Says: </p>{annotation.annotation}</p>
+                     <span style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                        <button style={{display:"inline",margin:"5px",borderRadius:"8px",backgroundColor:"#897CFF"}} onClick={(e) => {
                             e.preventDefault()
                             handleVote(true,annotation.id)}}>
                                 Upvote
                         </button>
-                        <p>{annotation.vote_total}</p>
-                        <button  onClick={(e) => {
+                        <p style={{display:'inline',marginTop:"15px"}}>No. Of Votes: {annotation.vote_total}</p>
+                        <button style={{display:"inline",margin:"5px",borderRadius:"8px",backgroundColor:"#897CFF"}} onClick={(e) => {
                             e.preventDefault()
                             handleVote(false,annotation.id)}}>
                                 Downvote
-                        </button>
+                        </button></span><br></br>
 
                         {(annotation.user_id === sessionUser.id) && (
                         <>
-                        <button onClick={(e) => {
+                        <div style={{display:"flex",alignItems:"center",justifyContent:'center'}}>
+
+                        {annotation.user_id ===sessionUser.id && 
+                        (<>
+                        <button style={{display:"inline",margin:"5px",borderRadius:"8px",backgroundColor:"#897CFF"}} onClick={(e) => {
                             e.preventDefault()
                             deleteThisAnnotation(annotation.id)
                         }}>Delete Annotation</button>
-                        <button onClick={(e) => {
+                        <button style={{display:"inline",margin:"5px",borderRadius:"8px",backgroundColor:"#897CFF"}} onClick={(e) => {
                             e.preventDefault()
                             setShowForm(!showForm)
-}}>Edit Annotation</button>
+}}>Edit Annotation</button></>)}
+                    </div>
                     {showForm && (
                         <AnnotationForm existingAnnotation={annotation} message={"Edit Annotation"} type={"edit"}/>)}
                         </>
@@ -98,7 +104,7 @@ export default function AnnotationComponent() {
 } else {
     return (
       <div className="no-annotations">
-        <p><big>Can you explain this line?</big> <br />Annotate This Snippet.</p>
+        <p style={{textAlign:"center"}}><big>Can you explain this line?</big> <br />Annotate This Snippet.</p>
         <big><pre><div className={"line-number-annotation"}>{line.number + 1}<code>{" " + line.line_text}</code></div></pre></big>
         <AnnotationForm onSubmit={async (e,line,annotation) => {
         e.preventDefault()

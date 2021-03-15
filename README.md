@@ -36,9 +36,9 @@
     <img src="./frontend/public/logo.png" alt="Logo" >
   </a>
 
-  <h3 align="center"><img height="50px" width="50px" src="./frontend/public/favicon.ico">Code Genius</h3>
+  <h3 text-align="center"><img height="50px" width="50px" src="./frontend/public/favicon.ico">Code Genius</h3>
 
-  <p align="center">
+  <p text-align="center">
     An application that makes it easy to create a to-do list so you'll never forget to grab the milk.  
     <br />
     <a href="https://github.com/dakotabenger/code_genius"><strong>Explore the docs �</strong></a>

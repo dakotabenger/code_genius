@@ -45,7 +45,8 @@ export default function HomePageComponent() {
     const hThreeStyle = {
         textAlign:"center",
         position:"relative",
-        top:"5px"
+        top:"5px",
+        height:"30px"
     }
 
     const thStyle = {
@@ -58,7 +59,8 @@ export default function HomePageComponent() {
         cursor:"pointer"
     }
 const backgroundDivStyle = {
-    backgroundColor: "#000000"
+    backgroundColor: "#892CDC"
+
 }
 
     return (
@@ -66,11 +68,11 @@ const backgroundDivStyle = {
               <br>
               </br>
         
-              <h5 style={hThreeStyle}>Code Snippets.</h5>
+              <h5 style={hThreeStyle}>Code Snippets:</h5>
               <h6 style={hThreeStyle}>Click on any Snippet to see the code.</h6>
             <div> </div>
-              <div style={backgroundDivStyle}>
-                <Table striped bordered hover variant="dark" style={{position:"relative",top:"100px",height:"600px"}}>
+              <div style={{...backgroundDivStyle,display:"flex",justifyContent:"center"}}>
+                <Table striped bordered hover variant="dark" style={{position:"relative",top:"10px",height:"100%", width:"70%"}}>
                     <thead>
                         <tr>
                             <th style={thStyle}>Title</th>

@@ -23,7 +23,7 @@ function LoginFormPage() {
   };
 
   return (
-    <>
+    <div style={{backgroundColor:"darkgray'"}}>
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <ul>
@@ -49,9 +49,9 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button style={{display:"inline",margin:"5px",borderRadius:"8px",backgroundColor:"#897CFF"}}type="submit">Log In</button>
       </form>
-    </>
+    </div>
   );
 }
 

@@ -28,39 +28,54 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
  const ulStyle = {
-  display:"block",
   padding:"0px",
-  backgroundColor:"#52057b",
-  position:"relative",
-  top:"46px",
+  backgroundColor:"darkgray",
   listStyleType:"none",
+  borderRadius: "8px",
+  borderLeft: "10px solid #894CFF",
+  borderRight: "10px solid #894CFF",
+  borderBottom: "10px solid #894CFF",
+  minHeight:"250px",
+  zIndex:"1"
  }
 
  const spanStyle = {
-   padding:"0px",
-   display:"inline",
-   position:"relative",
-   top:"2px",
-   right:"5px"
+  //  padding:"0px",
+  //  display:"inline",
+  //  position:"relative",
+  //  top:"2px",
+  //  :"5px"
+  zIndex:"1"
  }
  const buttonStyle = {
+  backgroundColor: "#897CFF",
+  marginTop:"5px",
+  marginRight:"10px",
+  borderRadius:"33px",
+  border:"1px solid white",
+  marginLeft:"5px",
+  zIndex:"1"
 
  }
   return (
     <span style={spanStyle}>
       <button style={buttonStyle} onClick={openMenu}>
-        <i className="fas fa-user-circle" /> Profile Menu
+        <i className="fas fa-user-circle" /> 
       </button>
       {showMenu && (
-      <>
-        <ul style={ulStyle}className="profile-dropdown">
-      <p>Profile:</p>
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+        <>
+      <div style={{...ulStyle}}>
+        <div style={{display:"flex",alignContent:"space-between",justifyContent:"center"}}>
+      <p style={{textAlign:"center",fontWeight:"bold"}}>Profile:<br></br><br></br></p><br></br>
+        </div>
+        <p style={{textAlign:"center"}}>
+          Usermame: {user.username}<br></br>
+          Email: {user.email}
+          </p>
+          <div style={{display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
+            <button style={{backgroundColor:"#897CFF",borderRadius:"8px",border:"0.5px solid transparent",}}onClick={logout}>Log Out</button>
+          </div>
+          </div>
         </>
       )}
     </span>

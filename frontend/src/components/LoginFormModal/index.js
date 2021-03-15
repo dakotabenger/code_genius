@@ -7,10 +7,10 @@ function LoginFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
+      <a style={{color:"#897DFF",fontWeight:"bold",marginRight:"10px"}} onClick={(e) => {e.preventDefault();setShowModal(true)}}>Log In</a>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
+          <LoginForm style={{backgroundColor:"darkgray"}}/>
         </Modal>
       )}
     </>

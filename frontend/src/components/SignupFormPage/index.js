@@ -36,7 +36,7 @@ const history = useHistory()
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
-          Email
+          Email:<br></br>
           <input
             type="text"
             value={email}
@@ -45,7 +45,7 @@ const history = useHistory()
           />
         </label>
         <label>
-          Username
+          Username:<br></br>
           <input
             type="text"
             value={username}
@@ -54,7 +54,7 @@ const history = useHistory()
           />
         </label>
         <label>
-          Password
+          Password:<br></br>
           <input
             type="password"
             value={password}
@@ -63,7 +63,7 @@ const history = useHistory()
           />
         </label>
         <label>
-          Confirm Password
+          Confirm Password:<br></br>
           <input
             type="password"
             value={confirmPassword}
