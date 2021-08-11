@@ -11,6 +11,7 @@ import AnnotationComponent from "./AnnotationComponent";
 import * as lineActions from '../../store/line'
 import {fetch} from '../../store/csrf'
 
+
 export default function LineComponent({line}) {
     const dispatch = useDispatch()
     const [showModal, setShowModal] = useState(false);
@@ -45,9 +46,7 @@ return (
             </code><br />
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <AnnotationComponent
-                    annotations={line.Annotations}
-                    />
+                    <AnnotationComponent line={line} />
                 </Modal>
                 )}
                 

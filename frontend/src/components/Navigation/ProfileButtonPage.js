@@ -10,6 +10,7 @@ export default function ProfilePage() {
 
     const logout = (e) => {
         e.preventDefault();
+        console.log("in here")
         dispatch(sessionActions.logout());
       };
 
@@ -47,7 +48,7 @@ export default function ProfilePage() {
         </div>
       </div>
       
-          <button className="htmamurai" style={{backgroundColor:"#897CFF",borderRadius:"8px",border:"0.5px solid transparent",width:"10%",textAlign:"center",marginLeft:"4em"}}  sonClick={(e) => logout(e)}>Log Out</button>
+          <button className="htmamurai" style={{backgroundColor:"#897CFF",borderRadius:"8px",border:"0.5px solid transparent",width:"10%",textAlign:"center",marginLeft:"4em"}}  onClick={(e) => logout(e)}>Log Out</button>
           
         </div>
   );

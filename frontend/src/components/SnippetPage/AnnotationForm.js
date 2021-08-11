@@ -60,13 +60,11 @@ export default function AnnotationForn({existingAnnotation,type}) {
             }}>
                     <h4 style={{textAlign:"center"}}htmlFor="annotation">Have something else to add about this snippet? Add an annotation below:</h4>
                 <div style={{display:'flex',alignItems:"center"}}>
-                    <textarea style={{width:"1000px",height:"200px",backgroundColor:"#897CFF"}}name="annotation" id="annotation-input" value={annotation} onChange={(e) => {
+                    <textarea style={{width:"1000px",height:"200px",backgroundColor:"whitesmoke"}}name="annotation" id="annotation-input" value={annotation} onChange={(e) => {
                         console.log(e.target.value,"event",annotation,"annotation",existingAnnotation,"existing")
                         setAnnotation(e.target.value)}} />
                 </div>
-                <div style={{display:"flex",justifyContent:"center"}}>
-                <button style={{height:"80px",width:"200px",backgroundColor:"#897CFF",borderRadius:"8px"}}className="form-button">Create New Annotation</button>
-                </div>
+                <button style={{height:"80px",width:"66%",backgroundColor:"#897CFF",borderRadius:"8px",marginRight:"0",textAlign:"center",marginLeft:"150px"}}className="form-button">Create New Annotation</button>
             </form>
 )
         }

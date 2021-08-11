@@ -74,8 +74,9 @@ code{
 }
 
 .annotation-component {
-    background-color: darkgray;
+    background-color: #312450;
     border-radius: 10px;
+    height: 100vh;
 }
 
 .no-annotations {

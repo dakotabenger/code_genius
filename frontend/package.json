@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bit/bodynar.components.comments": "^1.2.4",
+    "@bit/bodynar.components.uid": "0.0.2",
+    "@bit/hult.careermapper.font-awesome": "^1.0.2",
+    "@bit/react-bootstrap.react-bootstrap.internal.style-links": "^1.0.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -12,6 +16,7 @@
     "bootstrap-icons": "^1.2.2",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
+    "node-sass": "^4.14.1",
     "prismjs": "^1.22.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
