@@ -66,22 +66,13 @@ const backgroundDivStyle = {
     return (
               <>
               <div id="wrapper">
-                <section id="one" class="wrapper style2 spotlights">
-                     <section>
-                     <div class="content">
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-            <div class="content">
-                <div class="inner">
-                     <h5 style={hThreeStyle}>Code Snippets:</h5>
-              <h6 style={hThreeStyle}>Click on any Snippet to see the code.</h6>
-            <div> </div>
-              <div style={{...backgroundDivStyle,display:"flex",justifyContent:"center"}}>
-                <Table striped bordered hover variant="dark" style={{position:"relative",top:"10px",height:"100%", width:"70%"}}>
+                <section id="one" class="wrapper  spotlights">
+                <Table striped bordered hover variant="dark" style={{position:"relative",top:"10px",height:"100%", width:"100%"}}>
                     <thead>
                         <tr>
-                            <th style={thStyle}>Title</th>
+                            <th style={thStyle}>Snippet</th>
                             <th style={thStyle}>User</th>
-                            <th style={thStyle}>Annotations</th>
+                            <th style={thStyle}># of Annotations</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -107,14 +98,6 @@ const backgroundDivStyle = {
                     </tbody>
 
                 </Table>        
-            </div>
-                  </div>
-                </div>
-                </div>
-        </section>
-              <br>
-              </br>
-              
                 </section>
              </div>
             </>

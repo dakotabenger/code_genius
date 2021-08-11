@@ -28,8 +28,8 @@ function App() {
             </div>
         </section>
         <div id="wrapper">
-        <section id="intro" class="fullscreen style1  fade-up">
-						<div class="inner">
+        <section id="intro" class="fullscreen style1  fade-up details">
+						<div class="inner details">
             <img className="navLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
 
 							  <p style={{textAlign:"center"}}>A collection of code snippets and their respective annotations<br /></p>
@@ -55,8 +55,8 @@ function App() {
                   </Switch>		
         ) : (<p>Log in or sign up!</p>)}
         <footer id="footer" class="wrapper alt">
-      <div class="inner">
-        &copy; Untitled. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>
+      <div class="inner copy-text">
+        &copy; Benger Consulting Company. All rights reserved. Template by: <a className="copy-link" href="http://html5up.net">HTML5 UP</a>
       </div>
     </footer>
         </div>

@@ -7,7 +7,8 @@ html {
 
 #root {
     background-color: #892CDC;
-    /* height: 100% */
+    min-height: 100%
+
 ;
 }
 
@@ -15,4 +16,31 @@ html {
     height: 100%;
     width: 100%;
     margin-top: 20px;
+}
+
+#footer {
+    position:fixed;
+    bottom:0px;
+    height: 3%;
+    width:100%;
+}
+
+.copy-text {
+    color: whitesmoke;
+    text-align: right;
+    float: left;
+    padding-right: 4%;
+}
+
+.copy-link {
+    color: #892CDC;
+}
+
+.details {
+    height: 150px;
+}
+
+.form-div>* {
+    flex: 1 1 100%;
+
 }
