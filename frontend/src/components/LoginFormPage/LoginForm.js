@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#892CDC',
   },
 }));
 
@@ -59,13 +60,13 @@ const history = useHistory()
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container className="loginContainer"component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography style={{color:"#892CDC"}}component="h1" variant="h5">
             Login
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -75,7 +76,7 @@ const history = useHistory()
           ))}
         </ul>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={12}>
               <TextField
                 autoComplete="fname"
                 name="username"
@@ -86,7 +87,10 @@ const history = useHistory()
                 label="Username"
                 autoFocus
                 onChange={(e) => setCredential(e.target.value)}
-              />
+              value={credential}
+              className="userNameInput"
+
+  />
             </Grid>
             
             <Grid item xs={12}>
@@ -111,14 +115,14 @@ const history = useHistory()
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className={`${classes.submit} formButton`}
           >
             Sign Up
           </Button>
-          <DemoButton>Demo User</DemoButton>
+          <DemoButton></DemoButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/sign-up" variant="body2">
+              <Link href="/signup" variant="body2">
                 Need to create an account? Sign up!
               </Link>
             </Grid>

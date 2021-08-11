@@ -32,7 +32,7 @@ function App() {
 						<div class="inner details">
             <img className="navLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
 
-							  <p style={{textAlign:"center"}}>A collection of code snippets and their respective annotations<br /></p>
+							  <p style={{textAlign:"center",color:"whitesmoke"}}>A collection of code snippets and their respective annotations<br /></p>
 						</div>
           </section>
         {isLoaded ? (
@@ -54,9 +54,9 @@ function App() {
                       </Route>
                   </Switch>		
         ) : (<p>Log in or sign up!</p>)}
-        <footer id="footer" class="wrapper alt">
+        <footer id="footer" class="wrapper alt" >
       <div class="inner copy-text">
-        &copy; Benger Consulting Company. All rights reserved. Template by: <a className="copy-link" href="http://html5up.net">HTML5 UP</a>
+         Dak Benger <a href="https://github.com/dakotabenger">| Github </a> <a href="https://www.linkedin.com/in/dakota-benger/">| LinkedIn</a>  <a href="https://dakotabenger.github.io/portfolio-page"> | Portfolio Site</a> <a href="http://html5up.net"> | Design: HTML5 UP</a>
       </div>
     </footer>
         </div>

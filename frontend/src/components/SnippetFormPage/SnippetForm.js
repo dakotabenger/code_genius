@@ -41,7 +41,7 @@ export default function SnippetForm() {
         <>
          <div className="inner "style={{textAlign:"center",justifySelf:"center",alignSelf:'center'}}>
                 <label style={{textAlign:"center",marginTop:"33px",paddingRight:"1%",width:"100%"}}htmlFor="title">Enter A Title For Your Snippet:</label>
-                <input style={{width:"50%",textAlign:"center",display:"flex",alignItems:"center",float:"inline-end",margin:"auto"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
+                <input style={{width:"50%",textAlign:"center",display:"flex",alignItems:"center",float:"inline-end",margin:"auto", backgroundColor:"whitesmoke"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
         </div>
         <div className="form-div" style={{display:"flex", alignContent:"center",justifyContent:"center",paddingLeft:"10%",flexWrap:"wrap",flexDirection:"column"}}>
 

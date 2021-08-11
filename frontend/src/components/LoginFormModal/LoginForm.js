@@ -118,7 +118,7 @@ const history = useHistory()
           <DemoButton>Demo User</DemoButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/sign-up" variant="body2">
+              <Link href="/signup" variant="body2">
                 Need to create an account? Sign up!
               </Link>
             </Grid>

@@ -1,0 +1,26 @@
+.formButton {
+    width: 100%;
+    background-color: #892CDC;
+    letter-spacing: 0.25em;
+    font-weight: bold;
+}
+
+.signupContainer {
+    margin-top: 20px;
+    background-color: whitesmoke;
+    border-radius: 3%;
+}
+
+.labelForPromo {
+    color: #892CDC;
+}
+
+.userNameInput {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    border-radius: 3%;
+}
+

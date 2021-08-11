@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#892CDC',
   },
 }));
 
@@ -64,13 +65,13 @@ const history = useHistory()
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container className="signupContainer" component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography style={{color:"#892CDC"}}component="h1" variant="h5">
           Sign up
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -78,7 +79,7 @@ const history = useHistory()
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={6} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="username"
@@ -91,7 +92,7 @@ const history = useHistory()
                 onChange={(e) => setUsername(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 variant="outlined"
                 required
@@ -103,7 +104,7 @@ const history = useHistory()
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 variant="outlined"
                 required
@@ -118,7 +119,7 @@ const history = useHistory()
             required
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 variant="outlined"
                 required
@@ -134,7 +135,7 @@ const history = useHistory()
               />
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
+              <FormControlLabel className="labelForPromo"
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive marketing promotions and updates via email."
               />

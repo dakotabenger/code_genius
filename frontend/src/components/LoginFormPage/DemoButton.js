@@ -25,7 +25,7 @@ function DemoButton() {
     };
   
     return (
-     <button className="btn btn-primary" onClick={handleSubmit}></button>
+     <button className="formButton"onClick={handleSubmit}>Demo Login</button>
     );
   }
   

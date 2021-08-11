@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -31,9 +31,9 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
+        <Link to="/sign-in">Login</Link>
         <NavLink style={NavLinkStyle} to="/signup">Sign Up</NavLink>
-        <a href="https://github.com/dakotabenger"></a>
+ 
       </>
     );
   }
@@ -83,7 +83,7 @@ function Navigation({ isLoaded }){
           <ul>
             <li>
               
-            <img className="navLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
+            <img className="sideBarLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
 
               <NavLink  exact to="/home">Our Snippets</NavLink>
               <NavLink exact to="/snippet-form">Create Snippet</NavLink>
