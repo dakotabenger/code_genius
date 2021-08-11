@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './LoginForm.css';
-import DemoButton from '../LoginFormPage/DemoButton'
+import DemoButton from './DemoButton';
 
 
 const useStyles = makeStyles((theme) => ({

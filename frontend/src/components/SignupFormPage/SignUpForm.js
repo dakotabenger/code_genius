@@ -15,8 +15,7 @@ import Container from '@material-ui/core/Container';
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './LoginForm.css';
-import DemoButton from '../LoginFormPage/DemoButton'
+import './SignupForm.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,23 +38,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginForm() {
+export default function SignUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [credential, setCredential] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 const history = useHistory()
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors([]);
-    return dispatch(sessionActions.login({ credential, password }))
-      .catch((res) => {
-        if (res.data && res.data.errors) setErrors(res.data.errors);
-      });
+    if (password === confirmPassword) {
+      setErrors([]);
+     dispatch(sessionActions.signup({ email, username, password }))
+        .catch(res => {
+          if (res.data && res.data.errors) setErrors(res.data.errors);
+        })
+        history.push("/home");
+    }
+    return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
   return (
@@ -66,13 +71,11 @@ const history = useHistory()
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-            Login
+          Sign up
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
         <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -85,10 +88,36 @@ const history = useHistory()
                 id="username"
                 label="Username"
                 autoFocus
-                onChange={(e) => setCredential(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </Grid>
-            
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="confirmPassword"
+                label="Confirm Password"
+                type="confirmPassword"
+                id="password"
+                autoComplete="current-password"
+                value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -104,7 +133,12 @@ const history = useHistory()
             required
               />
             </Grid>
-        
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="I want to receive marketing promotions and updates via email."
+              />
+            </Grid>
           </Grid>
           <Button
             type="submit"
@@ -115,11 +149,10 @@ const history = useHistory()
           >
             Sign Up
           </Button>
-          <DemoButton>Demo User</DemoButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/sign-up" variant="body2">
-                Need to create an account? Sign up!
+              <Link href="/sign-in" variant="body2">
+                Already have an account? Sign in
               </Link>
             </Grid>
           </Grid>

@@ -37,7 +37,7 @@ function App() {
           </section>
         {isLoaded ? (
                   <Switch>
-                    <Route path="/login" >
+                    <Route path="/sign-in" >
                       <LoginFormPage />
                     </Route>
                     <Route path="/signup">

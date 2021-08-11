@@ -39,13 +39,13 @@ export default function SnippetForm() {
     }
     return (
         <>
-         <div style={{textAlign:"center",justifySelf:"center",alignSelf:'center'}}>
+         <div className="inner "style={{textAlign:"center",justifySelf:"center",alignSelf:'center'}}>
                 <label style={{textAlign:"center",marginTop:"33px",paddingRight:"1%",width:"100%"}}htmlFor="title">Enter A Title For Your Snippet:</label>
                 <input style={{width:"50%",textAlign:"center",display:"flex",alignItems:"center",float:"inline-end",margin:"auto"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
         </div>
         <div className="form-div" style={{display:"flex", alignContent:"center",justifyContent:"center",paddingLeft:"10%",flexWrap:"wrap",flexDirection:"column"}}>
 
-        <form style={{height:"100%",display:"flex",alignSelf:"center"}}>
+        <form style={{height:"100%",display:"flex",alignSelf:"center",flexWrap:"wrap",flexDirection:"row",flexBasis:"1 1 40px"}}>
             <div style={{height:"100%",paddingLeft:"20px", marginTop:"30px"}}>
                 <h3 style={{textAlign:"center",}}>Enter Code Below:</h3>
                 <Editor value={code}  onValueChange={code => setCode(code)} highlight={code => highlight(code,languages.js)} padding={12} style={{
@@ -53,19 +53,21 @@ export default function SnippetForm() {
                 fontSize: 18,
                 backgroundColor: "grey",
                 color:"red",
-                height: "100%",
-                width:"100%",
-                minHeight: "100%",
-                minWidth:"1vh",
+                height: "60vh",
+                width:"60vw",
+                minHeight: "60vh",
+                minWidth:"60vw",
                 border: "4px solid black",
-                borderRadius: "8%",
+                borderRadius: "",
                 overflow:"scroll",
-                width:"100%"
                 }}
                 />
             </div>
-            <div style={{display:"flex",alignSelf:"flex-end" }}>
-            <button style={{height:"60px",justifyContent:"center",borderRadius:"8%",backgroundColor:"#897CFF",width:"140px",   flexBasis: "10px",letterSpacing:"0",padding:"0px"
+            <div style={{width:"100%"}}></div>
+            <div style={{display:"flex",alignSelf:"flex-end",justifyContent:"center",paddingLeft:"35%",margin:"8px" }}>
+            <button style={{height:"60px",justifyItems:"center",borderRadius:"8%",backgroundColor:"#897CFF",width:"140px",   flexBasis: "10px",letterSpacing:"0",padding:"0px", padding: "8px",alignItems:
+            "center"
+ 
 }}> Create Snippet </button><br></br>
             </div>
         </form>
