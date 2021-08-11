@@ -1,20 +1,21 @@
-pre{
+ pre{
     counter-reset: line;
-    width: 800px;
+    width: 700px;
     display: block;
     align-items: center;    
 }
 code{
-    /* margin: -5px; */
+    margin: -5px;
     counter-increment: line;
     right: 60px;
-    /* padding: 5px; */
+    padding: 5px;
     border-left: transparent 10px ;
+    height: 100px;
 }
 
 .line-code:before{
     right: 15px;
-    /* margin: -7px; */
+    margin: -7px;
     padding: 15px;
     content: counter(line);
     -webkit-user-select: none;
@@ -69,4 +70,4 @@ code{
 .no-annotations {
     border-radius: 10px;
     background-color: darkgray;
-}
+} 

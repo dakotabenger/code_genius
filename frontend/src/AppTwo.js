@@ -19,20 +19,23 @@ function App() {
   }, [dispatch]);
 
   return (
-        <>
+      <div id="wrapper">
         <section id="sidebar">
 				    <div class="inner">
                <Navigation isLoaded={isLoaded} />
             </div>
         </section>
-        <div id="wrapper">
-        <section id="intro" class="fullscreen style1  fade-up">
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Code Genius</h1>
 							  <p>A collection of code snippets and their respective annotations<br /></p>
 						</div>
           </section>
         {isLoaded ? (
+          <section id="one" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
                   <Switch>
                     <Route path="/login" >
                       <LoginFormPage />
@@ -50,14 +53,12 @@ function App() {
                       <HomePageComponent></HomePageComponent>
                       </Route>
                   </Switch>		
+								</div>
+							</div>
+						</section>
+					</section>
         ) : (<p>Log in or sign up!</p>)}
-        <footer id="footer" class="wrapper alt">
-      <div class="inner">
-        &copy; Untitled. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>
-      </div>
-    </footer>
-        </div>
-      </> 
+      </div> 
     
   )
 }

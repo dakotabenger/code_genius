@@ -77,15 +77,25 @@ function Navigation({ isLoaded }){
   
   return (
     <>
-    <div style={flexDivStyle}>
-    <img onClick={() => {history.push("/")}}src="./logo.png"></img>
-    <ul style={ulStyle}>
-      <li style={liStyle}>
-        <NavLink style={NavLinkStyle} exact to="/home">Home</NavLink>
-        <NavLink style={NavLinkStyle}exact to="/snippet-form">Create Snippet</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <section id="sidebar">
+				<div class="inner">
+					<nav>
+          <ul>
+            <li>
+              
+            <img className="navLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
+
+              <NavLink  exact to="/home">Our Snippets</NavLink>
+              <NavLink exact to="/snippet-form">Create Snippet</NavLink>
+                {isLoaded && sessionLinks}
+            </li>
+          </ul>
+					</nav>
+				</div>
+			</section>
+    <div>
+    
+   
     </div>
     </>
   );

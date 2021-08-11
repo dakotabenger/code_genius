@@ -65,10 +65,14 @@ const backgroundDivStyle = {
 
     return (
               <>
-              <br>
-              </br>
-        
-              <h5 style={hThreeStyle}>Code Snippets:</h5>
+              <div id="wrapper">
+                <section id="one" class="wrapper style2 spotlights">
+                     <section>
+                     <div class="content">
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+            <div class="content">
+                <div class="inner">
+                     <h5 style={hThreeStyle}>Code Snippets:</h5>
               <h6 style={hThreeStyle}>Click on any Snippet to see the code.</h6>
             <div> </div>
               <div style={{...backgroundDivStyle,display:"flex",justifyContent:"center"}}>
@@ -104,6 +108,15 @@ const backgroundDivStyle = {
 
                 </Table>        
             </div>
+                  </div>
+                </div>
+                </div>
+        </section>
+              <br>
+              </br>
+              
+                </section>
+             </div>
             </>
             
     )
