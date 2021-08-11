@@ -39,9 +39,9 @@ export default function SnippetForm() {
     }
     return (
         <>
-         <div style={{textAlign:"center"}}>
-                <h3 style={{textAlign:"center",marginTop:"33px",paddingRight:"20px"}}htmlFor="title">Enter A Title For Your Snippet:</h3>
-                <input style={{width:"500px",textAlign:"center"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
+         <div style={{textAlign:"center",justifySelf:"center",alignSelf:'center'}}>
+                <label style={{textAlign:"center",marginTop:"33px",paddingRight:"20px",width:"100%"}}htmlFor="title">Enter A Title For Your Snippet:</label>
+                <input style={{width:"50%",textAlign:"center",display:"flex",alignItems:"center",float:"inline-end",margin:"auto"}} name="title" value={title} type="text" onChange={e => setTitle(e.target.value)}/>
         </div>
         <form style={{height:"100%",display:"flex"}}>
            

@@ -10,10 +10,12 @@ import SnippetPage from "./components/SnippetPage/SnippetPage";
 import HomePageComponent from "./components/HomePageComponent/HomePageComponent";
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const history = useHistory()
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -28,8 +30,9 @@ function App() {
         <div id="wrapper">
         <section id="intro" class="fullscreen style1  fade-up">
 						<div class="inner">
-							<h1>Code Genius</h1>
-							  <p>A collection of code snippets and their respective annotations<br /></p>
+            <img className="navLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
+
+							  <p style={{textAlign:"center"}}>A collection of code snippets and their respective annotations<br /></p>
 						</div>
           </section>
         {isLoaded ? (
