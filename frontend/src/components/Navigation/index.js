@@ -81,14 +81,17 @@ function Navigation({ isLoaded }){
 				<div class="inner">
 					<nav>
           <ul>
+            {sessionUser && (
             <li>
               
             <img className="sideBarLogo" onClick={() => {history.push("/")}}src="./logo.png"></img>
 
               <NavLink  exact to="/home">Our Snippets</NavLink>
               <NavLink exact to="/snippet-form">Create Snippet</NavLink>
-                {isLoaded && sessionLinks}
             </li>
+            )}
+            {isLoaded && sessionLinks}
+
           </ul>
 					</nav>
 				</div>

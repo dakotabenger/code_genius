@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
@@ -15,6 +15,8 @@ import { useHistory } from "react-router-dom";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const sessionUser = useSelector(state => state.session.user);
+
   const history = useHistory()
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -35,7 +37,7 @@ function App() {
 							  <p style={{textAlign:"center",color:"whitesmoke"}}>A collection of code snippets and their respective annotations<br /></p>
 						</div>
           </section>
-        {isLoaded ? (
+       
                   <Switch>
                     <Route path="/sign-in" >
                       <LoginFormPage />
@@ -52,8 +54,11 @@ function App() {
                     <Route path="/home">
                       <HomePageComponent></HomePageComponent>
                       </Route>
+                      <Route path="/">
+                        {sessionUser ? (<HomePageComponent></HomePageComponent>) : (<LoginFormPage />)}
+                      </Route>
                   </Switch>		
-        ) : (<p>Log in or sign up!</p>)}
+      
         <footer id="footer" class="wrapper alt" >
       <div class="inner copy-text">
          Dak Benger <a href="https://github.com/dakotabenger">| Github </a> <a href="https://www.linkedin.com/in/dakota-benger/">| LinkedIn</a>  <a href="https://dakotabenger.github.io/portfolio-page"> | Portfolio Site</a> <a href="http://html5up.net"> | Design: HTML5 UP</a>

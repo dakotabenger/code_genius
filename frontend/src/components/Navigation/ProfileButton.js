@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import ProfilePage from "./ProfileButtonPage";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function ProfileButton({ user }) {
   borderLeft: "10px solid #894CFF",
   borderRight: "10px solid #894CFF",
   borderBottom: "10px solid #894CFF",
-  minHeight:"250px",
+  minHeight:"px",
   zIndex:"1"
  }
 
@@ -48,13 +49,17 @@ function ProfileButton({ user }) {
   zIndex:"1"
  }
  const buttonStyle = {
-  backgroundColor: "#897CFF",
-  marginTop:"5px",
+  backgroundColor: "#312450",
+  // marginTop:"5px",
   marginRight:"10px",
   borderRadius:"33px",
   border:"1px solid white",
   marginLeft:"5px",
-  zIndex:"1"
+  zIndex:"1",
+  height:"20px",
+  width:"10vw",
+  maxWidth:"10vw",
+  border:"0px"
 
  }
   return (
@@ -63,21 +68,8 @@ function ProfileButton({ user }) {
         <i className="fas fa-user-circle" /> 
       </button>
       {showMenu && (
-        <>
-      <div style={{...ulStyle}}>
-        <div style={{display:"flex",alignContent:"space-between",justifyContent:"center"}}>
-      <p style={{textAlign:"center",fontWeight:"bold"}}>Profile:<br></br><br></br></p><br></br>
-        </div>
-        <p style={{textAlign:"center"}}>
-          Usermame: {user.username}<br></br>
-          Email: {user.email}
-          </p>
-          <div style={{display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
-            <button style={{backgroundColor:"#897CFF",borderRadius:"8px",border:"0.5px solid transparent",}}onClick={logout}>Log Out</button>
-          </div>
-          </div>
-        </>
-      )}
+          <ProfilePage />
+       )}
     </span>
   );
 }

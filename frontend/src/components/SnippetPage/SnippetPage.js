@@ -17,7 +17,6 @@ export default function SnippetPage() {
    if (snippet) {
         return (
             <div>
-                <h2 className="snippet-title" style={{textAlign:"center"}}>Snippet Title: {snippet.title}</h2>
                 <h3 style={{textAlign:"center"}}>Click On A Line To See Annotations</h3>
             <div style={{justifyContent:"center", display:"flex"}}>
             <div className="snippet-component" style={{alignSelf:"center",paddingLeft:"180px"}}>

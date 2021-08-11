@@ -53,7 +53,11 @@ export default function SnippetCode({ lines }) {
     <code className="language-javascript line-code" ></code><br />
     
     <code className="language-javascript line-code" ></code><br />
-    
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+    <code className="language-javascript line-code" ></code><br />
+
 
     
   </pre>
